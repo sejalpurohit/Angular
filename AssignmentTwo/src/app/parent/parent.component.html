@@ -1,0 +1,18 @@
+<div  *ngFor="let details of studentDetails">
+   <label> Name: </label>
+   {{details.name}}
+       <br>
+     <label> Age:</label>
+      {{details.age}}
+    <br>
+    <label>Gender:</label>
+     {{details.gender}}
+    <br>
+    <label> DOB :</label>
+    {{details.dob}}
+    <br>
+    <div *ngFor="let location of details.location" >
+        <app-child [location]="location"></app-child>
+    <div>
+    
+</div>

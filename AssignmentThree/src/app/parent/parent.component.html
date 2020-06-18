@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row">
+        <div class="col sm-6">
+            <app-child (counter)="counter($event)"></app-child>
+             <h4 class="text-success">The total elapsed time is: {{ currentCounter }}</h4>
+        </div>
+    </div>
+</div>
