@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col md-4">
+            <h2 class="text-success">Cars</h2>
+            <div *ngFor="let each of car">
+                <p style="color:red;">Name : {{each.name}}</p>
+                <ul>
+             <h4 class="text-info">Specification:-</h4>
+                <div  style="color:blue;" *ngFor="let specification of each.specification">      
+                    <li>Model - {{specification.model}}</li>
+                    <li>FuelType - {{specification.fuelType}}</li>
+                    <li>Seating Type - {{specification.seatingCapacity}}</li>
+                    <li>Fuel Tank Capacity -{{specification.fuelTankCapacity}}</li>
+                    <li>Mileage - {{specification.mileage}}</li>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
