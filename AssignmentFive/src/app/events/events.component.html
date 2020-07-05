@@ -1,0 +1,16 @@
+<table style="width:100%">
+<tbody *ngFor="let event of eventList">
+    
+    <tr>
+      Event Name
+      <td>{{ event.name }}</td>
+      Event Date
+      <td>{{ event.date }}</td>
+      Event Time
+      <td>{{ event.time }}</td>
+    </tr>
+    <tr *ngFor="let location of event.location">
+        Event Address 
+      <td> {{ location.address }} {{ location.city }} {{ location.state}} {{ location.pin}} {{ location.country}}</td>
+    </tr>
+  </table>

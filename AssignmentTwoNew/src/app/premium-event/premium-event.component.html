@@ -1,0 +1,15 @@
+  
+
+  <h2>Angular Connect</h2>
+<div  *ngFor="let premiumEvent of premiumEvents">
+    <div  style="font-weight: bolder;">
+        {{ premiumEvent.name}}
+    </div>
+    <div  >
+       <p *ngIf="premiumEvent.onlineURL && !premiumEvent.location">Online Only</p>
+       Date: {{ premiumEvent.date }} <br>
+       Time: {{ premiumEvent.time }} <br>
+       <p *ngFor="let location of premiumEvent.location"> Location: {{ location.address }} {{ location.city }} {{ location.state }} {{ location.pin }} {{ location.country }} </p> 
+       <p *ngIf="premiumEvent.onlineURL"> Online URL: {{ premiumEvent.onlineURL }} </p>
+    </div>
+</div>
