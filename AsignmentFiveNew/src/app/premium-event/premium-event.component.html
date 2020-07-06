@@ -1,0 +1,32 @@
+<div  *ngFor="let premiumEvent of premiumEvents">
+    <div>
+        {{ premiumEvent.name }}
+        <button type="button" (click)="premiumEvent.hidden = false">
+            Expand
+        </button> 
+
+        <button type="button"  (click)="premiumEvent.hidden = true">
+            Collapse
+        </button>
+    </div>
+
+    <div  [hidden]="premiumEvent.hidden">
+
+        <div>
+            <p [ngClass]="{disabled: premiumEvent.format != 'Online'}" >Online Only</p>
+            <p [ngClass]="{disabled: premiumEvent.format != 'InPerson'}" >In-Person</p>
+            <p [ngClass]="{disabled: premiumEvent.format}" >TBD</p>
+        </div>
+
+        Date: {{ premiumEvent.date }} <br>
+        Time: {{ premiumEvent.time }} <br>
+
+        <p *ngFor="let location of premiumEvent.location">
+            Location: {{ location.address }} {{ location.city }} {{ location.state }} {{ location.pin }} {{ location.country }}
+        </p>
+
+        <p *ngIf="premiumEvent.onlineURL">
+            Online URL: {{ premiumEvent.onlineURL }}
+        </p>
+    </div>
+</div>
